@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dancing+Script&family=Noto+Sans+KR&family=Poppins&family=Questrial&family=Raleway&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.modal .modal-content{
+  /* border: 1px solid #000; */
+  width: 600px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  overflow: hidden;
+}
+
+.modal-content > div {
+  padding: 20px;
+}
+
+.photo {
+  flex: 1;
+  background: url(/modal_ui/profile.png) no-repeat center center/cover;
+}
+
+.desc {
+  flex: 2;
+}
+
+.desc-header h2 {
+  font-weight: bold;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-close i{
+  color: #999;
+}
+
+.btn-close:hover i {
+  color: #000;
+}
+
+.desc-cont input[type=email] {
+  display: block;
+  width: calc(100% - 14px);
+  padding: 7px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  text-align: center;
+}
+
+.desc-cont input[type=email]::placeholder {
+  color:#bbb;
+  transition: 0.5s;
+}
+
+.desc-cont input[type=email]:focus::placeholder {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.desc-cont button {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  color: #fff;
+  background-color: crimson;
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+  .modal .modal-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-content > div {
+    width: 350px;
+  }
+
+  .photo {
+    flex-basis: 250px;
+  }
+}

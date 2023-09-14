@@ -1,0 +1,210 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+span.h2 {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* navigation */
+ul.nav {
+  width: 700px;
+  padding: 10px 0;
+  margin: 0;
+  background-color: papayawhip;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+}
+
+.nav-item {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-item a {
+  color: palevioletred;
+  margin: 0 12px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.nav-item a::before {
+  content: attr(data-link-alt);
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 100%;
+  transition: 0.5s;
+}
+
+.nav-item a span {
+  color: #000;
+  display: block;
+  transition: 0.5s;
+
+}
+
+.nav-item a:hover span {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.nav-item a:hover::before {
+  opacity: 1;
+  top: 0;
+}
+
+/* custom */
+.check-line input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding:0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
+
+.check-line input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 26px;
+  letter-spacing: -1px;
+  cursor: pointer;
+}
+
+.check-line input[type="checkbox"] + label::before {
+  content: "\f14a";
+  font: var(--fa-font-solid); /* font-awesome 6부터.. */
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #eee;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.check-line input[type="checkbox"]:checked + label::after {
+  content: "\f14a";
+  font: var(--fa-font-solid); /* font-awesome 6부터.. */
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: palevioletred;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.check-line input[type="checkbox"]:checked + label span {
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* hecxagon */
+.hecxagon-bg {
+  width: 600px;
+  height: 450px;
+}
+
+.hecxagon {
+  width: 350px;
+  height: 200px;
+  background-color: #eee;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hecxagon::before, .hecxagon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+}
+
+.hecxagon::before {
+  transform: rotate(60deg);
+}
+
+.hecxagon::after {
+  transform: rotate(-60deg);
+}
+
+.hecxagon, .hecxagon::before, .hecxagon::after {
+  background-color: rgb(245, 196, 196, 0.3);
+  border: 1px solid #eee;
+}
+
+/* pulse effect */
+.pulse {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.pulse-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wave {
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  background-color: palevioletred;
+  font-size: 60px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+}
+
+.wave::before, .wave::after {
+  content: "";
+  position: absolute;
+  border: 3px solid palevioletred;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 2s linear infinite;
+}
+
+.wave::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}

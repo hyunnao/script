@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Screen Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Questrial&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/full_screen/style.css">
+</head>
+<body>
+  <div class="wapper">
+    <div id="start_main">
+      <div id="start_cont">
+        <h1 class="typing_text">Simple, One Page Design</h1>
+        <p>A free landing page theme with video background</p>
+        <a href="#" class="start_btn">Get Started</a>
+      </div>
+      <div id="main_cont" class="hidden" >
+        <h1 id="dynamic"></h1>
+        <form class="box">
+          <input type="text" placeholder="Type..">
+          <input type="submit" value="search">
+        </form>
+        <div class="sch">
+          <div class="icon"></div>
+          <form>
+            <input type="text" placeholder="What are you looking for?">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 화면전환
+    const start_btn = document.querySelector(".start_btn");
+    let start_cont = document.getElementById("start_cont");
+    let main_cont = document.getElementById("main_cont");
+
+    start_btn.addEventListener("click", (event) => {
+      start_cont.classList.add("hidden");
+      main_cont.classList.remove("hidden");
+    });
+
+
+    // 화면토글
+    const sch = document.querySelector(".sch");
+    const sch_icon = document.querySelector(".sch .icon");
+
+    function openNav(event) {
+      sch.classList.toggle("active");
+    };
+
+    sch_icon.addEventListener("click", openNav);
+
+    // 커서깜빡임
+    let target = document.querySelector("#dynamic");
+    
+    function randomString() {
+      let stringArr = ["Learn to HTML", "Learn to CSS", "Learn to Javascript", "Learn to React"];
+      let selectString = stringArr[Math.floor(Math.random() * stringArr.length)];
+      let selectStringArr = selectString.split(""); 
+      // split 단어하나하나 쪼개줌
+
+      return selectStringArr;
+    }
+
+    // typing reset
+    function resetTyping(){
+      target.textContent = "";
+      dynamic(randomString());
+    }
+
+    // 한글자씩 text 출력
+    function dynamic(randomArr){
+      if (randomArr.length > 0){
+        target.textContent += randomArr.shift();
+        setTimeout(function() {
+          dynamic(randomArr);
+        }, 80);
+      } else {
+        setTimeout(resetTyping, 3000);
+      }
+    }
+
+    dynamic(randomString());
+
+    function blick(){
+      target.classList.toggle("active");
+    }
+    setInterval(blick, 500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Questrial', sans-serif;
+}
+
+h1, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input:focus {outline:none;}
+
+
+.wapper {
+  background: url(/full_screen/background_img.jpg) center center/cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+#start_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#start_main:before .start_cont {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+} 
+
+/* start_cont */
+#start_cont {
+  color: #fff;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#start_cont h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 70px;
+  margin-bottom: 16px;
+}
+
+#start_cont p {
+  font-size: 23px;
+  margin-bottom: 16px;
+}
+
+#start_cont a {
+  display: block;
+  width: fit-content;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+#start_cont a:hover {
+  background-color: #aaa;
+}
+
+@media (max-width: 769px) {
+  .sch form input {
+    font-size: 56px;
+  }
+  
+  #start_cont p {
+    font-size: 20px;
+  }
+}
+
+/* main_cont */
+#main_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main_cont h1 {
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+#main_cont form.box input {
+  border: none;
+}
+
+#main_cont form.box input[type=text] {
+  background-color: #fff;
+  width: 300px;
+  padding: 10px 10px 10px 30px;
+  border-radius: 20px 0 0 20px;
+}
+
+#main_cont form.box input[type=submit] {
+  background-color: #ffc4c4;
+  width: 100px;
+  padding: 10px;
+  margin-left: -5px;
+  border-radius: 0 20px 20px 0 ;
+  transition: all 0.5s;
+}
+
+#main_cont form.box input[type=submit]::placeholder {
+  color: gray;
+}
+
+#main_cont form.box input[type=submit]:hover {
+  background-color: #373737;
+  mix-blend-mode: difference;
+  color: #ffc4c4;
+}
+
+/* sch */
+.sch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+.sch.active {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+}
+.sch form{
+  display: none;
+}
+
+.sch form input[type=text]{
+  width: 500px;
+  color: #fff;
+  background-color: transparent;
+  padding: 20px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  text-align: center;
+  font-size: 30px;
+}
+
+.sch form input[type=text]::placeholder{
+  color: #fff;
+  font-weight: bold;
+}
+
+.sch.active form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sch .icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+.sch .icon:before {
+  content: '\f002';
+  font-family: fontawesome;
+}
+
+.sch.active .icon:before {
+  content: '\f00d';
+  font-family: fontawesome;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+h1#dynamic {
+  position: relative;
+  display: inline-block;
+}
+
+h1#dynamic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+}
+
+#dynamic.active::after {
+  display: none;
+}
+
+
+.typing_text {
+  /* color: #ffc4c4; */
+  border-right: 2px solid #fff;
+  animation: blick .5s infinite, typing 2s steps(22);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 622px;
+  }
+}
+
+@keyframes blick {
+  50% {
+    border-color: transparent;
+  }  
+}  
