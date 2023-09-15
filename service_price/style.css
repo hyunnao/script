@@ -1,0 +1,140 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dancing+Script&family=Noto+Sans+KR&family=PT+Sans+Narrow&family=Poppins&family=Questrial&family=Raleway&display=swap');
+
+body {
+  font-family: 'Noto sans KR';
+  font-size: 14px;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  color: #222;
+  font-size: 56px;
+  font-weight: normal;
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.package {
+  width: 300px;
+  border-radius: 15px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  box-shadow:  0 20px 40px rgba(0, 0, 0, 0.14);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  flex-shrink: 1;
+  margin-right: 20px;
+}
+
+.package:hover {
+  transform: scale(1.1);
+}
+
+.package::before {
+  content: "";
+  background-color: rgb(255, 255, 255, 0.13);
+  width: 100%;
+  height: 38%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-10deg) scale(1.5);
+}
+
+.package:nth-of-type(1) {
+  background: linear-gradient(-45deg, #f223da, #6eabf4);
+}
+
+.package:nth-of-type(2) {
+  background: linear-gradient(-45deg, #fee478, #f938cf);
+}
+
+.package:nth-of-type(3) {
+  background: linear-gradient(-45deg, #4a9beb, #9954fb);
+  margin-right: 0;
+}
+
+.package .title i {
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.package:nth-of-type(1) .title i {
+  background: linear-gradient(45deg, #f223da, #6eabf4);
+  
+}
+.package:nth-of-type(2) .title i {
+  background: linear-gradient(45deg, #fee478, #f938cf);
+  transform: rotate(-45deg);
+  
+}
+.package:nth-of-type(3) .title i {
+  background: linear-gradient(45deg, #4a9beb, #9954fb);
+
+}
+
+.package .title h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.package .price {
+  font-size: 36px;
+}
+
+.package ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.package ul li::before {
+  content: "\f00c";
+  font: var(--fa-font-solid); /* font-awesome 6부터.. */
+  padding-right: 5px;
+
+}
+
+.package ul li:last-child::before {
+  content: "\f00d";
+  font: var(--fa-font-solid); /* font-awesome 6부터.. */
+}
+
+.package a {
+  background-color: #fff;
+  color: #222;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: 0.3s;
+  z-index: 1; 
+  position: relative;  
+  /* 가상클래스때문에 z-index 줘야하고 z-index가 적용되려면 position을 줘야함 */
+}
+
+.package a:hover {
+  background-color: #222;
+  color: #fff;
+}
