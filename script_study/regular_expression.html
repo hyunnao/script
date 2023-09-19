@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식(Regular expression)</title>
+</head>
+
+<body>
+    <h3>정규표현식</h3>
+    <p>문자열에서 특정한 문자를 찾아내는 도구</p>
+    <h4>컴파일</h4>
+    <p>
+      검출하고자 하는 패턴을 만드는일<br>
+      우선 정규표현식 객체를 만듬<br>
+      // 방법1  - 정규표현식 리터럴<br>
+      let pattern = |a|<br><br>
+      // 방법2 - 정규표현식 객체 생성자<br>
+      let pattern = new RegExp('a');
+    </p>
+    <h4>RegExp객체의 사용</h4>
+    <p>
+      <strong>RegExp.exec()</strong> - 데이터 추출(실행)<br>
+      console.log(pattern.exec("abcdef"));    // "abcdef"인자에서 해당 |a|를 추출<br> 
+      -> ["a"] 출력<br>
+      console.log(pattern.exec("bcdef"));<br>
+      -> null 출력(해당 데이터가 없으므로)<br>
+      ** let pattern = |a.| 입력후 console.log(pattern.exec("abcdef")); 추출시에는 ["ab"]가 추출됨
+      .의 역할이 '문자1개'를 나타냄<br><br>
+      <strong>RegExp.test()</strong> - 테스트(문자열이 있으면 true, 없으면 false)<br>
+      console.log(pattern.exec("abcdef"));<br>
+      -> true 출력<br>
+      console.log(pattern.exec("bcdef"));<br>
+      -> false 출력
+    </p>
+
+    <h4>문자열 메소드 실행</h4>
+    <p>
+      <strong>String.match()</strong> - RegExp.exec()와 비슷<br>
+      let pattern = |a|;<br>
+      let str = "abcdef";<br>
+      str.match(pattern);<br>
+      -> ["a"] 출력<br>
+      let str = "bcdef";<br>
+      str.match(pattern);<br>
+      -> null 출력<br><br>
+      <strong>String.replace()</strong> - 문자열에서 패턴을 검색해서 이를 변경한후 변경된 값을 리턴<br>
+      let str = "abcdef";<br>
+      str.replace(pattern, "A");
+      -> "Abcdef" 출력
+    </p>
+
+    <h4>옵션</h4>
+    <p>
+      <strong>i</strong> - 대소문자를 구분하지 않음<br>
+      let xi = |a|;<br>
+      "Abcde".match(xi);<br>
+      -> null<br><br>
+      let oi = |a|i;<br>
+      "Abcde".(xi);<br>
+      -> null 출력<br>
+      "Abcde".(oi);<br>
+      -> ["A"] 출력<br><br>
+      
+      <strong>g</strong> - 검색된 모든결과를 리턴<br>
+      let xg = |a|;<br>
+      "abcdea".match(xg);<br>
+      ->["a"] 출력<br><br>
+      let og = |a|g;<br>
+      "abcdea".match(og);<br>
+      -> ["a", "a"] 출력<br><br>
+
+      let ig = |a|ig;<br>
+      "AabcdAa".match(ig);<br>
+      -> ["A", "a", "A", "a"] 출력
+    </p>
+
+    <h4>캡쳐 - 그룹을 지정하고 위치를 치환하는 내용</h4>
+    <p>
+      let pattern = /(|w+)|s(|w+)/;<br>
+      let str = "coding everybody";<br>
+      let result = str.replace(patter, "$2, $1");<br>
+      consol.log(result);<br>
+      -> everybody, coding 출력($는 그룹을 의미)
+    </p>
+
+    <h4>치환</h4>
+    <p>
+      let urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;<br>
+      let content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';<br>
+      let result = content.replace(urlPattern, function(url){<br>
+          return '<a href="'+url+'">'+url+'</a>';<br>
+      });<br>
+      console.log(result);<br>
+      -> 생활코딩 : <a href="http://opentutorials.org/course/1">http://opentutorials.org/course/1</a> 입니다. 네이버 : <a href="http://naver.com">http://naver.com</a> 입니다. 출력
+    </p>
+</body>
+
+</html>

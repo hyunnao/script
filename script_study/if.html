@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF</title>
+</head>
+
+<body>
+    <h4>IF(조건문)</h4>
+    <p>if(true){<br>
+        alert('result : true');<br>
+    }
+    </p>
+    <h4>if else</h4>
+    <p>if(true){<br>
+        alert(1);<br>
+    } else {<br>
+        alert(2);<br>
+    }
+    <br><br>
+    //ex 1)<br>
+    if(false){<br>
+        alert(1);<br>
+    } else if(true){<br>
+        alert(2);<br>
+    } else if(true){<br>
+        alert(3);<br>
+    } else {<br>
+        alert(4);<br>
+    }<br>
+    // 결과 : 2<br><br>
+
+    //ex 2)<br>
+    if(false){<br>
+        alert(1);<br>
+    } else if(false){<br>
+        alert(2);<br>
+    } else if(true){<br>
+        alert(3);<br>
+    } else {<br>
+        alert(4);<br>
+    }<br>
+    //결과 3<br><br>
+
+    //ex 3<br>
+    if(false){<br>
+        alert(1);<br>
+    } else if(false){<br>
+        alert(2);<br>
+    } else if(false){<br>
+        alert(3);<br>
+    } else {<br>
+        alert(4);<br>
+    }<br>
+    //결과 4
+    </p>
+    
+    <h4>&&(논리연산자 = and연산자)</h4>
+    <p>좌항과 우항이 모두 참일때 참(true)<br>
+        if(true && true){<br>
+            alert(1);<br>
+        }
+    </p>
+    
+    <h4>||(or연산자)</h4>
+    <p>좌우항 둘중 하나라도 참이면 참, 둘다 거짓이면 거짓</p>
+
+    <h4>!(부정)</h4>
+    <p>부정의의미로 boolean의 값을 반대로 변환시킴<br>
+        ture를 false로, false를 ture로
+    </p>
+
+    <h4>boolean의 대체제</h4>
+    <p>
+    1. 조건문에 사용될수 있는 데이터형이 꼭 불린이 되는것은 아님<br>
+    관습적인 이유로 0 = false, 0 ≠ true 로 간주됨<br>
+    2.  false로 간주되는 데이터형 리스트
+    -!(부정)연산자 사용시
+    -''(빈문자열), undefined, null, NaN 일 경우
+    </p>
+    <script type="text/javascript">
+        // if else문 1
+        // let id = prompt('아이디를 입력해주세요.')
+        // if(id == 'egoing'){
+        //     alert('아이디가 일치 합니다.')
+        // } else {
+        //     alert('아이디가 일치하지 않습니다.')
+        // }
+        // prompt 입력값을 받을수 있는 기능을 가지고 있음
+
+        // if else문 2
+        // let id = prompt('아이디를 입력해주세요.');
+        // if(id == 'egoing'){
+        //     let password = prompt('비밀번호를 입력해주세요.');
+        //     if(password ==='111111'){
+        //         alert('인증 했습니다.');
+        //     } else {
+        //         alert('인증에 실패 했습니다.');
+        //     }
+        // } else {
+        //     alert('인증에 실패 했습니다.');
+        // }
+
+        // && 문
+        // let id = prompt('아이디를 입력해주세요.');
+        // let password = prompt('비밀번호를 입력해주세요.');
+        // if(id == 'egoing' && password ==='111111'){
+        //     alert('인증 했습니다.');
+        // } else {
+        //     alert('인증에 실패 했습니다.');
+        // }
+
+        // || 문
+        let id = prompt('아이디를 입력해주세요.');
+        let password = prompt('비밀번호를 입력해주세요.');
+        if((id === 'egoing' || id === 'k8805' || id === 'sorialgi') && password === '111111'){
+            alert('인증 했습니다.');
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+    </script>
+</body>
+
+</html>

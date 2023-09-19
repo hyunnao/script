@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효범위(scope)</title>
+</head>
+
+<body>
+    <h4>유효범위(scope)</h4>
+    <p>
+      변수의 수명<br><br>
+      <strong>전역변수</strong><br>
+      함수 밖에서 변수를 선언하면 그 변수는 전역변수가 됨. 에플리케이션 전역에서 접근이 가능한 변수<br>
+      <strong>지역변수</strong><br>
+      함수 내에서 선언하며 블록 내에서만 접근 가능한 변수<br><br>
+      **변수를 선언할 때는 꼭 let을 붙이는 것을 습관화해야 함
+    </p>
+
+    <h4>유효범위의 필요성</h4>
+    <p>아래 script문 참고</p>
+
+    <h4>전역변수의 사용</h4>
+    <p>불가피하게 전역변수를 사용해야 하는 경우는 하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리하는 방법을 사용<br>
+      전역변수를 사용하고 싶지 않다면 아래와 같이 익명함수를 호출함으로서 이러한 목적을 달성할 수 있다.
+    </p>
+
+    <p>지역변수를 선언할수 있는 범위는 함수에 대한 유효범위만 제공(javascript에서만)</p>
+    <script>
+       /* let vscope = "global";  // global 전역변수
+       function fscope(){
+        let vscope = "local"; // local 지역변수
+        alert(vscope);
+       }
+       fscope();
+       // 함수 fscope 내에서 vscope를 호출 했을 때 함수 밖에서 선언된 vscope의 값 global이 반환된 것 */
+      
+       /* // 유효범위의 효용성
+       function a (){
+          let i = 0; // 결과 012324
+          // i = 0; // 결과 무한반복
+       }
+       for(let i = 0; i < 5; i++){
+          a();
+          document.write(i);
+       }
+       // 함수 a에 let으로 i는 지역변수
+       // let이 붙어있지 않는 것은 for문의 i는 전역변수, for문이 시작될때마다 i가 0으로 계속 초기화 되기 때문 */
+
+       /* // 전역변수의 사용
+       let MYAPP = {}
+       MYAPP.calculator = {
+          'left' : null,
+          'right' : null
+       }
+       MYAPP.coordinate = {
+          'left' : null,
+          'right' : null
+       }
+
+       MYAPP.calculator.left = 10;
+       MYAPP.calculator.right = 20;
+       function sum(){
+          return MYAPP.calculator.left + MYAPP.calculator.right;
+       }
+       document.write(sum()); */
+       
+       // 전역변수 사용하고 싶지 않을때
+       /* (function(){
+          let MYAPP = {}
+          MYAPP.calculator = {
+              'left' : null,
+              'right' : null
+          }
+          MYAPP.coordinate = {
+              'left' : null,
+              'right' : null
+          }
+
+          MYAPP.calculator.left = 10;
+          MYAPP.calculator.right = 20;
+          function sum(){
+              return MYAPP.calculator.left + MYAPP.calculator.right;
+          }
+          document.write(sum());
+       }()) */
+
+       // 정적 유효범위(static scoping)
+       // 함수가 선언된 시점에서의 유효범위를 갖는다. 이방식을 정적 유효범위라고 한다
+       let i = 5; // 전역변수
+       function a(){
+         let i = 10; // 지역변수 i = 10
+         b();
+       }
+
+       function b(){
+         document.write(i); // i가 누구인가?? b함수안에 i의 지역변수를 먼저 찾음/ 없으면 전역 변수를 찾음
+                              // i의 전역 변수 사용
+                              // 사용될떄 X, 정의될때 
+       }
+
+       a();
+    </script>
+    
+</body>
+
+</html>
