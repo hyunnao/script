@@ -28,20 +28,56 @@
       border: none;
       cursor: pointer;
       position: relative;
+      --a: initial;
+      overflow: hidden;
     }
 
     button::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      transform: scale(1);
+      top: var(--top);
+      left: var(--left);
+      width: var(--diameter);
+      height: var(--diameter);
+      transform: scale(0);
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      /* animation: ripple-effect 1000ms linear; */
+      animation: var(--a);
+    }
+
+    @keyframes ripple-effect {
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <button id="btn1">CLICK</button>
+
+  <script>
+     const btn = document.getElementById('btn1')
+
+    const onClick = e => {
+      const { x, y, width, height} = btn.getBoundingClientRect()
+      const radius = Math.sqrt(width * width + height * height)
+      btn.style.setProperty('--diameter', radius * 2 + 'px')
+      const { clientX, clientY } = e
+      const left = (clientX - x - radius) / width * 100 + '%'
+      const top = (clientY - y - radius) / height * 100 + '%'
+
+      btn.style.setProperty('--left', left)
+      btn.style.setProperty('--top', top)
+      btn.style.setProperty('--a', '')
+      setTimeout(() => {
+        btn.style.setProperty('--a', 'ripple-effect 500ms linear')
+      }, 5)
+    }
+
+    btn.addEventListener('click', onClick)
+  </script>
 </body>
 </html>
