@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <h4>함수(function)</h4>
+    <p>
+      하나의 로직을 재실행할수 있도록 하는 것, 코드의 재사용성을 높여줌<br>
+      function 함수명( [인자...[,인자]] ){<br>
+        코드 내용;<br>
+        return 반환값;<br>
+     }
+    </p>
+    <h4>return</h4>
+    <p>함수 실행을 종료하고, 주어진 값을 함수 호출 지점으로 반환<br>
+      즉, 함수가 반환하는 값을 지정
+    </p>
+
+    <script type="text/javascript">
+       /* function numbering(){
+          let i = 0;
+          while(i < 10){
+            document.write(i + "<br />");
+            i += 1;
+          }
+       }
+       numbering();  // 함수호출방법
+        
+       function get_arguments(arg1, arg2){
+          return arg1 + arg2;
+       }
+
+       alert(get_arguments(10, 20));
+       alert(get_arguments(20, 30));
+      */
+      let numbering = function (){
+          i = 0;
+          while(i < 10){
+              document.write(i);
+              i += 1;
+          }   
+      }
+      /* 위의 코드와 동일내용 다른 코딩스타일
+      function numbering(){
+        i = 0;
+        while(i < 10){
+          document.write(i);
+          i += 1;
+        } 
+        */
+      numbering();
+
+      
+    </script>
+</body>
+
+</html>

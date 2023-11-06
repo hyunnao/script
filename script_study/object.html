@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <p>배열은 아이템에 대한 식별자로 숫자사용. 데이터가 추가되면 배열전체에서 중복되지 않는 인덱스가 자동으로 만들어져서 추가된 데이터에 대한 식별자가 됨<br>
+      이 인덱스를 이용해서 데이터를 가저오게 되는것. 만약 인덱스로 문자를 사용하고 싶다면 객체를 사용해야함
+    </p>
+    <h4>객체 생성</h4>
+    <p>// 방법1 <br>
+      let grades = {'key': value, 'key': value, 'key': value, ...};<br>
+      let grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};<br>
+
+      // 방법2<br>
+      let grades = {}; // {} 대신해서 new object() 사용할수 있음 <br>
+      grades['egoing'] = 10;<br>
+      grades['k8805'] = 6;<br>
+      grades['sorialgi'] = 80;
+    </p>
+    <h4>반복문</h4>
+    <p>script 참조</p>
+    <script type="text/javascript">
+      /* 
+      // 객체 반복문
+      let grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+      for(key in grades) { // (key in 객체명)
+          document.write("key : " + key + " value : " + grades[key] + "<br />");
+      }
+       
+      let grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+      for(let name in grades) { // (key in 객체명)
+          document.write("<li>key : " + name + ", value : " + grades[name] + "</li>");
+      }
+      */
+      let grades = {
+        'list' : {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+        'show' : function(){
+          for(let name in this.list){
+            document.write(name + ":" +this.list[name] + "<br />");
+          }
+        }
+      }
+      grades.show();
+    </script>
+</body>
+
+</html>

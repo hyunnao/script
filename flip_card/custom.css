@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dancing+Script&family=Noto+Sans+KR&family=PT+Sans+Narrow&family=Poppins&family=Questrial&family=Raleway&display=swap');
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card {
+  width: 400px;
+  height: 592px;
+  text-align: center;
+  /* perspective: 1000px; */
+  display: inline-block;
+  margin: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: inherit;
+  height: 100%;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 8px 0 rgab(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-back {
+  z-index: 1;
+  border: 1px solid #eee;
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+  opacity: 0.4;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back .flip-card-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.flip-card-back .flip-card-info > * {
+  margin-bottom: 0;
+}
+
+.flip-card-back p {
+  text-align: left;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.flip-card-back p a {
+  display: block;
+  width: 100px;
+  margin: 20px auto;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.flip-card-back p a:hover {
+  background-color: dodgerblue;
+}

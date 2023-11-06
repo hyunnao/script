@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>값으로서의 함수와 콜백</title>
+</head>
+
+<body>
+    <h4>값으로서의 함수와 콜백</h4>
+    <p>
+      함수도 객체. 즉, 일종의 값.<br>
+      function a(){} <br>
+      a라는 함수정의, 변수 a에 담긴 값은 함수<br>
+      let a = function(){}<br><br>
+
+      a = {<br>
+          b: function(){   // key(변수와 같은 역할.속성(property)) : value(값)<br>
+          }<br>
+      }; <br>
+      객체의 속성 값으로 담겨있는 함수를 메소드(method)라고 부름<br>
+      **객체 정의  a = {객체값}; <br>
+    </p>
+
+    <h4>함수는 값이기 때문에 다른함수의 인자로 전달될수 있음</h4>
+    <p>아래 script문 참고</p>
+
+    <h4>리턴값으로의 함수의 사용</h4>
+    <p>아래 script문 참고</p>
+
+    <h4>배열으로서의 함수의 사용</h4>
+    <p>아래 script문 참고</p>
+    
+    <h4>콜백</h4>
+    <p>어떠한 함수가 수신하는 인자가 함수인 경우</p>
+
+    <h4>비동기 처리(asynchronous)</h4>
+    <p>시간이 오래걸리는 작업이 있을때 이 작업이 완료된 후에 처리해야 할 일을 콜백으로 지정하면 해당 작업이 끝났을 떄 미리 등록한 작업을 실행하도록 할수있다.
+      다음코드는 일반적인 환경에서는 작동하지 않고 서버 환경에서만 작동한다.</p>
+    <script>
+      /* // 함수는 값이기 때문에 다른함수의 인자로 전달될수 있음
+      function cal(func, num){  // 첫번째 인자는 func, 두번째 인자는 num
+          return func(num)  // func가 담겨있는 함수를 호출하면서 두번째 인자의 값을 첫번재 인자에 전달한다
+      }
+      function increase(num){
+          return num+1
+      }
+      function decrease(num){
+          return num-1
+      }
+      alert(cal(increase), 1);  
+      // function cal(func, num){
+      //  let func = increase(num)
+      //  return num+1    결과값 1+1 = 2                   
+      // }
+      // func(num=1); 
+      alert(cal(decrease), 1);*/
+
+      /* 리턴값으로의 함수의 사용
+      function cal(mode){  // 
+          let funcs = {
+              'plus' : function(left, right){return left + right},
+              'minus' : function(left, right){return left - right}
+          }
+          return funcs[mode];   //  funcs 객체의 [] mode의 값을 puls로 하면 
+      }
+      alert(cal('plus')(2,1));    // cal('plus') = function(left, right){return left + right}  결과값 3
+      alert(cal('minus')(2,1));    // cal('minus') =  function(left, right){return left - right}  결과값 1 */
+      
+      /* // 배열으로서의 함수 사용 
+      let process = [
+          function(input){ return input + 10;}, // i = 0일때   결과 11
+          function(input){ return input * input;},  // i = 1일때  input값이 11로 되기 때문에 결과 121
+          function(input){ return input / 2;}   // i = 2일때  input값 = 121, 결과 60.5
+      ];
+      let input = 1;
+      for(let i = 0; i < process.length; i++){
+          input = process[i](input);
+      }
+      alert(input); */
+
+      /* 
+      let numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+      let sortfunc = function(a, b){
+          return a-b;  
+        /* 
+          console.log(a, b); // 값들을 비교하면서 정렬
+          if(a > b){
+            return 1;  // 결과가 양수
+          } else if (a < b){
+            return -1;  // 결과가 음수
+          } else {
+            return 0;
+          } 
+          /
+
+      }
+      console.log(numbers.sort(sortfunc));
+      // numbers는 객체(배열객체) sort는 메소드(객체에 속해있기 때문에 내장메소드라고도 함)
+      // sort는 배열을 정렬함. 
+      // array, a-b일떄 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20], b-a일떄 [20,10,9,8,7,6,5,4,3,2,1]
+      // sortfunc가 콜백함수. 콜백함수를 수신받는 메소드가 콜백함수를 인수로서 넘겨주는 실행 가능한 코드
+       */
+
+    </script> 
+    
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+</head>
+
+<body>
+    <h4>연산자</h4>
+    <p>값에 대해서 어떤 작업을 컴퓨터에게 지시하기 위한 기호<br>
+      '=' 대입연산자<br> 
+       a=1  //a는 변수, 1은 값
+    </p>
+    <h4>비교 연산자(boolean)</h4>
+    <p>값이 같은지, 다른지, 큰지, 작은지를 구분하는것<br>
+      비교연산자의 결과는 true(참) / false(거짓) 중 하나<br>
+    </p>
+    <h4>==(동등연산자)</h4>
+    <p>좌항과 우항을 비교해서 값이 같으면 true 다르면 false<br>
+      //== 사용하기<br>
+      alert(1==2)             //false<br>
+      alert(1==1)             //true<br>
+      alert("one"=="two")     //false <br>
+      alert("one"=="one")     //true
+    </p>
+    <h4>===(일치연산자)</h4>
+    <p>좌항과 우항이 '정확'하게 같을때 true 다르면 false<br>
+      //===사용하기<br>
+      alert(1=='1');              //true 양쪽의 값을 같다고 판단하기때문에 ture<br>
+      alert(1==='1');             //false 데이터타입이 다르기때문에 false
+
+    </p>
+    <p>alert(null == undefined);       //true<br>
+      alert(null === undefined);      //false<br>
+      alert(true == 1);               //true<br>
+      alert(true === 1);              //false<br>
+      alert(true == '1');             //true<br>
+      alert(true === '1');            //false<br><br>
+       
+      alert(0 === -0);                //true<br>
+      alert(NaN === NaN);             //false</p>
+    <p>** null 값이 없음, undefined 값이 정의되지 않음<br>
+      NaN 0을 0으로 나눴을때의 값<br>
+       ** ==는 값을 비교, ===는 같은 값인지 비교
+    </p>
+    <h4>부정과 부등호</h4>
+    <p><strong>!=</strong><br>
+      alert(1!=2);            //true<br>
+      alert(1!=1);            //false<br>
+      alert("one"!="two");    //true<br>
+      alert("one"!="one");    //false<br><br>
+      <strong>></strong><br>
+      alert(10>20);   //false<br>
+      alert(10>1);    //true<br>
+      alert(10>10);   //false<br><br>
+      <strong>>=</strong><br>
+      alert(10>=20);      //false<br>
+      alert(10>=1);       //true<br>
+      alert(10>=10);      //true</p>
+    <script type="text/javascript">
+       
+    </script>
+</body>
+
+</html>
