@@ -58,6 +58,8 @@ for(let key in iveMembersArray){
   console.log(`${key}:${iveMembersArray[key]}`);
 }
 
+// object에서 for..in을 사용하면 key값을 가져올수 있음
+// array 에서 for..in을 사용하면 index값을 가져올수 있음
 
 /**
  * for...of
