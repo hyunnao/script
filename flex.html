@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <link rel="stylesheet" href="flex_css.css">
+</head>
+<body>
+  <h3>1. 스크롤 없는 100% 레이아웃</h3>
+  <div class="flex_container1">
+    <div class="flex_item1"></div>
+    <div class="flex_item1"></div>
+    <div class="flex_item1"></div>
+  </div>
+  <h3>2. 내비게이션 영역</h3>
+  <div class="flex_container2">
+    <div class="flex_item2_logo">logo</div>
+    <div class="flex_item2_search">search</div>
+    <div class="flex_item2_gnb">gnb</div>
+  </div>
+  <h3>3. 브라우저 화면 아래에 붙는 푸터</h3>
+  <div class="flex_container3">
+    <div class="flex_item3">footer</div>
+  </div>
+  <h3>4. 정렬이 다른 메뉴</h3>
+  <div class="flex_container4">
+    <div class="flex_item4">menu1</div>
+    <div class="flex_item4">menu2</div>
+    <div class="flex_item4">menu3</div>
+  </div>
+  <h3>5. 폼 레이블 수직 중앙 정렬</h3>
+  <div class="flex_container5">
+    <div class="row_wrap">
+      <div class="row">
+        <span class="title_content">채널 키워드</span>
+        <input class="txtfield" type="text" name="search" placeholder="키워드와 키워드 사이는 쉼표(콤마)로 구분해주세요.">
+      </div>
+    </div>
+  </div>
+  <h3>6-1. 중앙 정렬 아이콘</h3>
+  <div class="flex_container6_1">
+    <div class="flex_item6_1">icon1</div>
+  </div>
+  <h3>6-2. 중앙 정렬 아이콘</h3>
+  <div class="flex_container6_2">
+    <div class="flex_item6_2">icon2</div>
+  </div>
+  <h3>7. 유동 너비 박스</h3>
+  <div class="flex_container7">
+    <div class="flex_item7">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+    <div class="flex_item7">가나다</div>
+    <div class="flex_item7">가나다라마바사</div>
+    <div class="flex_item7">가나다라</div>
+    <button type="button" class="btn_refresh">버튼</button>
+  </div>
+  <h3>8. 말줄임과 아이콘스</h3>
+  <div class="flex_container8">
+    <div class="flex_item8">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+    <div class="flex_item8_1">가나다</div>
+    <div class="flex_item8_1">가나다라</div>
+    <button type="button" class="btn_refresh">버튼</button>
+  </div>
+  <h3>9. 위아래로 흐르는 목록</h3>
+  <div class="flex_container9">
+    <div class="photo_container">
+      <ul class="photo_list column">
+        <li class="photo_box">
+          <div class="photo"></div>
+          <div class="description">Title1</div>
+        </li>
+        <li class="photo_box">
+          <div class="photo"></div>
+          <div class="description">Title2</div>
+        </li>
+        <li class="photo_box">
+          <div class="photo"></div>
+          <div class="description">Title3</div>
+        </li>
+        <li class="photo_box">
+          <div class="photo"></div>
+          <div class="description">Title4</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h3>10. 가로세로 비율을 유지하는 반응형 박스</h3>
+  <div class="flex_container10">
+    <ul class="channel_list">
+      <li class="item">
+        <div class="thumb">
+          <img src="/" alt="">
+        </div>
+        <strong class="title">1</strong>
+      </li>
+      <li class="item">
+        <div class="thumb"></div>
+        <strong class="title">2</strong>
+      </li>
+      <li class="item">
+        <div class="thumb">
+          <img src="/" alt="">
+        </div>
+        <strong class="title">3</strong>
+      </li>
+      <li class="item">
+        <div class="thumb">
+          <img src="/" alt="">
+        </div>
+        <strong class="title">4</strong>
+      </li>
+      <li class="item">
+        <div class="thumb">
+          <img src="/" alt="">
+        </div>
+        <strong class="title">5</strong>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
