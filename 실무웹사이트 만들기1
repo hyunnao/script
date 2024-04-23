@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="#contents" class="skip">본문바로가기</a>
+    <header>
+      <h1><a href="#">한솔홈데코</a></h1>
+      <h2>대메뉴</h2>
+      <nav>
+        <ul>
+          <li><a href="#">제품명</a></li>
+          <li><a href="#">시공사례</a></li>
+          <li><a href="#">고객센터</a></li>
+          <li><a href="#">기업소개</a></li>
+          <li><a href="#">사업분야</a></li>
+        </ul>
+      </nav>
+      <h2>주요서비스</h2>
+      <nav>
+        <ul>
+          <li><a href="#">제품찾기</a></li>
+          <li><a href="#">SITEMAP</a></li>
+          <li><a href="#">BLOG</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+
+<!--
+1 dbcut.com 벤치마킹 사이트
+
+2 google store에서
+full page screen capture / image downloader 확장프로그램 다운받기
+-->
+</html>
